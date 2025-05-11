@@ -157,7 +157,7 @@ class CreditsState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		if (FlxG.keys.justPressed.ESCAPE || FlxG.keys.justPressed.BACKSPACE)
+		if (controls.BACK)
 		{
 			if(colorTween != null) {
 				colorTween.cancel();
@@ -165,7 +165,7 @@ class CreditsState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MusicBeatState.switchState(new MainMenuState());
 		}
-		if(FlxG.keys.justPressed.ENTER) {
+		if(controls.ACCEPT) {
 			CoolUtil.browserLoad(creditsStuff[curSelected][3]);
 		}
 		super.update(elapsed);

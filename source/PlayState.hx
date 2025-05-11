@@ -171,6 +171,7 @@ class PlayState extends MusicBeatState
 	private var updateTime:Bool = true;
 	public static var changedDifficulty:Bool = false;
 	public static var chartingMode:Bool = false;
+	public static var qqqeb:Bool = false;
 
 	//Gameplay settings
 	public var healthGain:Float = 1;
@@ -1078,6 +1079,12 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
+		
+		switch(Paths.formatToSongPath(SONG.song))
+		{
+		case 'lost-at-sea':
+		qqqeb = true;
+		}
 		
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
@@ -4195,6 +4202,8 @@ class PlayState extends MusicBeatState
 			FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 		}
 		super.destroy();
+		
+		qqqeb = false;
 	}
 
 	public static function cancelMusicFadeTween() {
