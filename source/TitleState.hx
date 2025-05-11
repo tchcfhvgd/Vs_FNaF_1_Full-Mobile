@@ -262,11 +262,11 @@ class TitleState extends MusicBeatState
 		logoBl = new FlxSprite(titleJSON.titlex, titleJSON.titley);
 		
 		
-		#if (desktop && MODS_ALLOWED)
-		var path = "mods/" + Paths.currentModDirectory + "/images/logoBumpin.png";
+		#if (sys && MODS_ALLOWED)
+		var path = #if mobile Sys.getCwd() + #end "mods/" + Paths.currentModDirectory + "/images/logoBumpin.png";
 		//trace(path, FileSystem.exists(path));
 		if (!FileSystem.exists(path)){
-			path = "mods/images/logoBumpin.png";
+			path = #if mobile Sys.getCwd() + #end "mods/images/logoBumpin.png";
 		}
 		//trace(path, FileSystem.exists(path));
 		if (!FileSystem.exists(path)){
@@ -297,7 +297,7 @@ class TitleState extends MusicBeatState
 		//trace(path, FileSystem.exists(path));
 		}
 		if (!FileSystem.exists(path)){
-			path = "assets/images/gfDanceTitle.png";
+			path = #if mobile Sys.getCwd() + #end "assets/images/gfDanceTitle.png";
 		//trace(path, FileSystem.exists(path));
 		}
 		gfDance.frames = FlxAtlasFrames.fromSparrow(BitmapData.fromFile(path),File.getContent(StringTools.replace(path,".png",".xml")));
