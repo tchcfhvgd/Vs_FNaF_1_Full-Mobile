@@ -214,7 +214,7 @@ class ChartingState extends MusicBeatState
 			};
 			addSection();
 			PlayState.SONG = _song;
-		}+
+		}
 
 		#if desktop
 		// Updating Discord Rich Presence
