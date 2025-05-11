@@ -1084,7 +1084,12 @@ class PlayState extends MusicBeatState
 		{
 		case 'lost-at-sea':
 		qqqeb = true;
+		case 'lost at sea':
+		qqqeb = true;
+		case 'LOST AT SEA':
+		qqqeb = true;
 		}
+		//这下总能读取了吧
 		
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
