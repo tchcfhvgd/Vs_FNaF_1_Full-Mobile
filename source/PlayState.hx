@@ -820,7 +820,14 @@ class PlayState extends MusicBeatState
 			case 'schoolEvil':
 				var evilTrail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069); //nice
 				insert(members.indexOf(dadGroup) - 1, evilTrail);
+	    }
+	    
+	    switch(Paths.formatToSongPath(SONG.song))
+		{
+		case 'lost-at-sea':
+		qqqeb = true;
 		}
+		//这下总能读取了吧
 
 		var file:String = Paths.json(songName + '/dialogue'); //Checks for json/Psych Engine dialogue
 		if (OpenFlAssets.exists(file)) {
@@ -1079,17 +1086,6 @@ class PlayState extends MusicBeatState
 			}
 		}
 		#end
-		
-		switch(Paths.formatToSongPath(SONG.song))
-		{
-		case 'lost-at-sea':
-		qqqeb = true;
-		case 'lost at sea':
-		qqqeb = true;
-		case 'LOST AT SEA':
-		qqqeb = true;
-		}
-		//这下总能读取了吧
 		
 		var daSong:String = Paths.formatToSongPath(curSong);
 		if (isStoryMode && !seenCutscene)
