@@ -51,8 +51,8 @@ jobs:
       - name: Install Haxelib
         run: |
           haxelib setup ~/haxelib
-          haxelib git hxcpp https://github.com/MobilePorting/hxcpp
-          haxelib git lime https://github.com/MobilePorting/lime
+          haxelib git hxcpp https://github.com/beihu235/hxcpp
+          haxelib git lime https://github.com/VapireMox/lime
           haxelib install openfl 9.2.2
           haxelib install flixel 5.2.2
           haxelib install flixel-ui 2.5.0
